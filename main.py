@@ -37,6 +37,7 @@ conn.commit()
 for row in rows:
     print (f'There are {row[0]} projects {row[1]}')
 
+
 # 3. How many employees are there for each skill?
 
 cursor.execute('''SELECT COUNT(e."employee_ID"), j."skill"
@@ -48,6 +49,7 @@ rows = cursor.fetchall()
 conn.commit()
 for row in rows:
     print (f'There are {row[0]} employees with the  {row[1]} skill')
+
 
 #4. Which employees live in the postal code `08094`? Show only the employee names.
 
@@ -100,6 +102,7 @@ for row in rows:
 for row in rows2:
     print (f'The project {row[0]} has {row[1]} employees working on it')
 
+
 # 7. What skills are most in demand for the projects in progress?
 cursor.execute('''SELECT j."skill", COUNT(j."skill")
     FROM "Employees" e
@@ -116,6 +119,7 @@ conn.commit()
 for row in rows:
     print (f'The skill {row[0]} is needed in {row[1]} projects')
 
+
 #8. How many employees have completed their projects, and how many are still in progress?
 
 cursor.execute('''SELECT s.project_status, COUNT(e."employee_ID") 
@@ -130,6 +134,7 @@ conn.commit()
 
 for row in rows:
     print (f'T {row[1]} employees have projects that are {row[0]}.'
+
 
 #9. What is the distribution of project statuses within each department?
 
@@ -147,6 +152,7 @@ conn.commit()
 
 for row in rows:
     print (row)
+
 
 # 10. Find Employees with Programming Skills Working on In-Progress Projects. Show only the employee name, department, and project name.
 
